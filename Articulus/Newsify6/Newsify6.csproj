@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{98305D75-5927-49FD-9F5F-85CCBAAE38BD}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Newsify6</RootNamespace>
+    <AssemblyName>Newsify6</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Newsify6_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentReader\ArticleContentPage.xaml.cs">
+      <DependentUpon>ArticleContentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentReader\ContentPresenter.cs" />
+    <Compile Include="Controls\CustomGridView.cs" />
+    <Compile Include="Controls\CustomPanel.cs" />
+    <Compile Include="Embedly\EmbedlyArticle.cs" />
+    <Compile Include="Embedly\Entity.cs" />
+    <Compile Include="Embedly\Keyword.cs" />
+    <Compile Include="History\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interests\InterestPage.xaml.cs">
+      <DependentUpon>InterestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interests\InterestElement.cs" />
+    <Compile Include="Login\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPageData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadingList\ReadingListItem.cs" />
+    <Compile Include="ReadingList\ReadingListPage.xaml.cs">
+      <DependentUpon>ReadingListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterBindingModel.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="SplashPage.xaml.cs">
+      <DependentUpon>SplashPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateSelector.cs" />
+    <Compile Include="WebBrowser\WebBrowserPage.xaml.cs">
+      <DependentUpon>WebBrowserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebBrowser\WebBrowserPageData.cs" />
+    <Compile Include="Websites\Website.cs" />
+    <Compile Include="Websites\WebsitePage.xaml.cs">
+      <DependentUpon>WebsitePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Newsify6_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\americasImage.jpg" />
+    <Content Include="Assets\americasImageblur.jpg" />
+    <Content Include="Assets\artsImage.jpg" />
+    <Content Include="Assets\artsImageblur.jpg" />
+    <Content Include="Assets\asiaImage.jpg" />
+    <Content Include="Assets\asiaImageblur.jpg" />
+    <Content Include="Assets\australiaImage.jpg" />
+    <Content Include="Assets\australiaImageblur.jpg" />
+    <Content Include="Assets\bbcImage.jpg" />
+    <Content Include="Assets\bbcImageblur.jpg" />
+    <Content Include="Assets\blank_back.jpg" />
+    <Content Include="Assets\booksImage.jpg" />
+    <Content Include="Assets\booksImageblur.jpg" />
+    <Content Include="Assets\business.jpg" />
+    <Content Include="Assets\businessblur.jpg" />
+    <Content Include="Assets\crimeImage.jpg" />
+    <Content Include="Assets\crimeImageblur.jpg" />
+    <Content Include="Assets\cultureImage.jpg" />
+    <Content Include="Assets\cultureImageblur.jpg" />
+    <Content Include="Assets\educationImage.jpg" />
+    <Content Include="Assets\educationImageblur.jpg" />
+    <Content Include="Assets\entertainmentImage.jpg" />
+    <Content Include="Assets\entertainmentImageblur.jpg" />
+    <Content Include="Assets\environmentImage.jpg" />
+    <Content Include="Assets\environmentImageblur.jpg" />
+    <Content Include="Assets\europeImage.jpg" />
+    <Content Include="Assets\europeImageblur.jpg" />
+    <Content Include="Assets\fashionImage.jpg" />
+    <Content Include="Assets\fashionImageblur.jpg" />
+    <Content Include="Assets\filmImage.jpg" />
+    <Content Include="Assets\filmImageblur.jpg" />
+    <Content Include="Assets\guardianImage.jpg" />
+    <Content Include="Assets\guardianImageblur.jpg" />
+    <Content Include="Assets\healthImage.jpg" />
+    <Content Include="Assets\healthImageblur.jpg" />
+    <Content Include="Assets\huffingtonImage.jpg" />
+    <Content Include="Assets\huffingtonImageblur.jpg" />
+    <Content Include="Assets\independentImage.jpg" />
+    <Content Include="Assets\independentImageblur.jpg" />
+    <Content Include="Assets\lifestyleImage.jpg" />
+    <Content Include="Assets\lifestyleImageblur.jpg" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\middleImage.jpg" />
+    <Content Include="Assets\middleImageblur.jpg" />
+    <Content Include="Assets\moneyImage.jpg" />
+    <Content Include="Assets\moneyImageblur.jpg" />
+    <Content Include="Assets\musicImage.jpg" />
+    <Content Include="Assets\musicImageblur.jpg" />
+    <Content Include="Assets\opinionImage.jpg" />
+    <Content Include="Assets\opinionImageblur.jpg" />
+    <Content Include="Assets\peopleImage.jpg" />
+    <Content Include="Assets\peopleImageblur.jpg" />
+    <Content Include="Assets\politicsImage.jpg" />
+    <Content Include="Assets\politicsImageblur.jpg" />
+    <Content Include="Assets\scotlandImage.jpg" />
+    <Content Include="Assets\scotlandImageblur.jpg" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\sportImage.jpg" />
+    <Content Include="Assets\sportImageblur.jpg" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\technologyImage.jpg" />
+    <Content Include="Assets\technologyImageblur.jpg" />
+    <Content Include="Assets\telegraphImage.jpg" />
+    <Content Include="Assets\telegraphImageblur.jpg" />
+    <Content Include="Assets\travelImage.jpg" />
+    <Content Include="Assets\travelImageblur.jpg" />
+    <Content Include="Assets\ukImage.jpg" />
+    <Content Include="Assets\ukImageblur.jpg" />
+    <Content Include="Assets\usaImage.jpg" />
+    <Content Include="Assets\usaImageblur.jpg" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\worldImage.jpg" />
+    <Content Include="Assets\worldImageblur.jpg" />
+    <Content Include="ContentReader\bbc.css" />
+    <Content Include="ContentReader\guardian.css" />
+    <Content Include="ContentReader\huff.css" />
+    <Content Include="ContentReader\inde.css" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="ContentReader\ArticleContentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CustomGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="History\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Interests\InterestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReadingList\ReadingListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplashPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WebBrowser\WebBrowserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Websites\WebsitePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.13.0">
+      <Name>SQLite for Universal Windows Platform</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackgroundServices\BackgroundServices.csproj">
+      <Project>{8cedb306-5f54-4ac2-855f-02856c569335}</Project>
+      <Name>BackgroundServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{de217645-c304-4ca9-92f0-02e6c4e521e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
